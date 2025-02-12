@@ -18,4 +18,9 @@ describe("nQeen", () => {
         expect(solveNQueen(2)).toEqual([])
         expect(solveNQueen(3)).toEqual([])
     })
+
+    test("should return correct solutions for n = 4", () => {
+        const solution = solveNQueen(4);
+        expect(solution.length).toEqual(4)
+    })
 })
