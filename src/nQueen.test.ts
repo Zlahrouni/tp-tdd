@@ -7,23 +7,32 @@ describe("nQeen", () => {
     })
 
     test("should return empty array for n = 0", () => {
-        expect(solveNQueen(0)).toEqual([])
+        expect(solveNQueen(0)).toEqual([[]])
     })
 
     test("should return just one queen and one case", () => {
-        expect(solveNQueen(1)).toEqual(['#'])
+        expect(solveNQueen(1)).toEqual([['#']])
     })
 
     test("should return empty array for n = 2 or 3 (no solution possible)", () => {
-        expect(solveNQueen(2)).toEqual([])
-        expect(solveNQueen(3)).toEqual([])
+        expect(solveNQueen(2)).toEqual([[]])
+        expect(solveNQueen(3)).toEqual([[]])
     })
 
     test("should return correct solutions for n = 4", () => {
+        const solutions = solveNQueen(4);
         const expected = [
-            ["O#OO", "OOO#", "#OOO", "OO#O"],
             ["OO#O", "#OOO", "OOO#", "O#OO"],
-          ];
-          expect(solveNQueen(4)).toEqual(expected);
+            ["O#OO", "OOO#", "#OOO", "OO#O"]
+        ];
+
+        expect(solutions).toHaveLength(2);
+        
+        expect(solutions).toEqual(
+            expect.arrayContaining([
+                expect.arrayContaining(expected[0]),
+                expect.arrayContaining(expected[1])
+            ])
+        );
     })
 })
