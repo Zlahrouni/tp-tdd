@@ -6,7 +6,7 @@ describe("nQeen", () => {
        expect(() => solveNQueen(-1)).toThrow("N should'nt be negative");
     })
 
-    test("should return empty array", () => {
+    test("should return empty array for n = 0", () => {
         expect(solveNQueen(0)).toEqual([])
     })
 
@@ -14,7 +14,8 @@ describe("nQeen", () => {
         expect(solveNQueen(1)).toEqual(['#'])
     })
 
-    test("should return empty array (no solution possible)", () => {
+    test("should return empty array for n = 2 or 3 (no solution possible)", () => {
         expect(solveNQueen(2)).toEqual([])
+        expect(solveNQueen(3)).toEqual([])
     })
 })
