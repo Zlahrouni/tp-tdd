@@ -35,4 +35,17 @@ describe("nQeen", () => {
             ])
         );
     })
+
+    test("should find correct number of solutions for n = 5", () => {
+        const solutions = solveNQueen(5);
+        expect(solutions).toHaveLength(10);
+    })
+
+    test("should have exactly 5 queens for each solution of n = 5", () => {
+        const solutions = solveNQueen(5);
+        solutions.forEach(solution => {
+            const queenCount = solution.join('').split('#').length - 1;
+            expect(queenCount).toBe(5);
+        });
+    })
 })
