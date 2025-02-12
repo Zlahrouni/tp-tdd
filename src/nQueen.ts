@@ -12,33 +12,18 @@ export function solveNQueen(n: number): string[][] {
     console.log(`board ${n} : \n`, board);
     
     function isPositionSafe(row: number, col: number): boolean {
-        // row
-        for (let j = 0; j < n; j++) {
+        // Check left row
+        for (let j = 0; j < col; j++) {
             if (board[row][j] === '#') return false;
         }
 
-        // column
-        for (let i = 0; i < n; i++) {
-            if (board[i][col] === '#') return false;
-        }
-
-        // up-left diagonal
+        // Check up-left diagonal
         for (let i = row, j = col; i >= 0 && j >= 0; i--, j--) {
             if (board[i][j] === '#') return false;
         }
 
-        // up-right diagonal
-        for (let i = row, j = col; i >= 0 && j < n; i--, j++) {
-            if (board[i][j] === '#') return false;
-        }
-        
-        // down-left diagonal
+        // Check down-left diagonal
         for (let i = row, j = col; i < n && j >= 0; i++, j--) {
-            if (board[i][j] === '#') return false;
-        }
-
-        // down-right diagonal
-        for (let i = row, j = col; i < n && j < n; i++, j++) {
             if (board[i][j] === '#') return false;
         }
 
