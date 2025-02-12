@@ -1,6 +1,7 @@
 type Board = string[][];
 
 export function solveNQueen(n: number): string[] {
+    const solutions: string[] = []
     if (n < 0) throw new Error("N should'nt be negative");
     if (n === 0) return [];
     if (n === 1) return ['#'];
@@ -10,5 +11,6 @@ export function solveNQueen(n: number): string[] {
     const board: Board = Array(n).fill(null).map(() => Array(n).fill('O'));
     console.log(`board ${n} : \n`, board);
     
-    return [];
+
+    return solutions;
 }

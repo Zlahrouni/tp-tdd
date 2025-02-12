@@ -20,7 +20,10 @@ describe("nQeen", () => {
     })
 
     test("should return correct solutions for n = 4", () => {
-        const solution = solveNQueen(4);
-        expect(solution.length).toEqual(4)
+        const expected = [
+            ["O#OO", "OOO#", "#OOO", "OO#O"],
+            ["OO#O", "#OOO", "OOO#", "O#OO"],
+          ];
+          expect(solveNQueen(4)).toEqual(expected);
     })
 })
