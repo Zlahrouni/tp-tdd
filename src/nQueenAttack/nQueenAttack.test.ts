@@ -14,4 +14,14 @@ describe("nQueen Attack test", () => {
         expect(solveNQueenAtack(1)).toEqual([[]]);
         expect(solveNQueenAtack(3)).toEqual([[]]);
     });
+
+    test("should return correct solutions for n = 2", () => {
+        const solutions = solveNQueenAtack(2);
+        const expected = [
+            ["##", "OO"],
+            ["OO", "##"]
+        ];
+
+        expect(solutions).toEqual(expected);
+    });
 })
